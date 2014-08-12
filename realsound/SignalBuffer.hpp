@@ -1,5 +1,4 @@
 #include <vector>
-#include "Signal.hpp"
 
 namespace sound
 {
@@ -9,111 +8,95 @@ namespace sound
 	class SignalBuffer
 	{
 	private:
+		typedef std::vector<float> Signal;
 		typedef std::vector<Signal> SignalArray;
-		typedef std::vector<unsigned> TimeArray;
-		SignalArray signals;
-		TimeArray microSecs;
+		typedef std::vector<unsigned> MicroSecs;
 
+	private:
+		SignalArray buffer;
 		unsigned bufferSize;
+		unsigned signalLength;
 		unsigned position;
-		unsigned sampleSize;
-		bool isFull;
+		bool isFulled;
 
 	public:
 		/**
-		* バッファに蓄積されている値を取得する
-		*/
-		inline const Signal& Buffer(const unsigned pos) const {
-			return signals[pos];
-		}
-
-		/**
-		* バッファに入っているSpectrumの時間を取得する
-		* 単位はマイクロ秒
-		*/
-		inline const unsigned Time(const unsigned pos) const {
-			return microSecs[pos];
-		}
-
-		/**
-		* バッファの位置を取得
-		*/
-		inline unsigned Position() const {
-			return position;
-		}
-
-		/**
-		* backだけ遡ってバッファの位置を取得
-		*/
-		inline unsigned Position(const unsigned back) const {
-			int buf = position - back;
-			if (buf < 0) 
-			{
-				if (!isFull)
-					return 0;
-				buf = bufferSize - buf - 1;
-			}
-			return buf;
-		}
-
-		/**
-		* バッファの大きさを取得
+		* バッファの大きさを取得する
+		* \return バッファの大きさ
 		*/
 		inline unsigned BufferSize() const {
 			return bufferSize;
 		}
 
 		/**
-		* バッファが満杯になったか調べる
+		* 信号の長さを取得する
+		* \return 信号の長さ
 		*/
-		inline bool IsFull() const {
-			return isFull;
+		inline unsigned SignalLength() const {
+			return signalLength;
 		}
 
-	private:
-		inline void RoundPosition() 
-		{
-			if (++position >= bufferSize)
+		/**
+		* バッファが満たされているか確認する
+		* \return バッファが満たされているかどうかのフラグ
+		*/
+		inline bool IsFulled() const {
+			return isFulled;
+		}
+
+		/**
+		* バッファの現在位置を取得する
+		* \return バッファの現在位置
+		*/
+		inline unsigned Position() const {
+			return position;
+		}
+
+		/**
+		* バッファの現在位置からbackだけ下がった位置を取得する
+		* \param[in] back 現在位置から下がる距離
+		* \return backだけ下がったバッファの位置
+		*/
+		inline unsigned Position(unsigned back) const {
+			int buf = (int)position - back;
+			if (buf < 0)
 			{
-				position = 0;
-				isFull = true;
+				if (isFulled)
+					return bufferSize - buf;
+				return 0;
 			}
+			return buf;
 		}
 
 	public:
-		SignalBuffer(unsigned bufferSize, unsigned sampleSize)
-			: position(0), isFull(false), sampleSize(sampleSize), bufferSize(bufferSize)
+		/**
+		* 信号をバッファに記録する
+		* \param[in] bufferSize バッファの大きさ
+		* \param[in] signalLength 信号の長さ
+		*/
+		SignalBuffer(const unsigned bufferSize, const unsigned signalLength)
+			: bufferSize(bufferSize), signalLength(signalLength), position(0), isFulled(false)
 		{
-			signals = SignalArray(bufferSize);
-			microSecs = TimeArray(bufferSize);
+			buffer = SignalArray(bufferSize);
+			for (unsigned i = 0; i < bufferSize; ++i)
+			{
+				buffer[i].resize(signalLength);
+			}
 		}
 
 		/**
-		* バッファに信号を追加する
+		* バッファに配列の中身を追加する
+		* \param[in] p 信号の配列
 		*/
-		void Append(const float signal[], const unsigned microSec)
+		void Append(const float* p) 
 		{
-			signals[position] = Signal(signal, sampleSize);
-			microSecs[position] = microSec;
-			RoundPosition();
-		}
+			buffer[position].assign(p, p + signalLength);
 
-		/**
-		* バッファに信号を追加する
-		*/
-		void Append(const float signal[])
-		{
-			signals[position] = Signal(signal, sampleSize);
-			microSecs[position] = 0;
-			RoundPosition();
-		}
-
-		/**
-		* バッファの位置を初期化する
-		*/
-		void Clear()
-		{
-			position = 0;
+			if (++position >= bufferSize)
+			{
+				position = 0;
+				isFulled = true;
+			}
 		}
 	};
 }

@@ -164,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scale.hpp" />
-    <ClInclude Include="Signal.hpp" />
     <ClInclude Include="SignalBuffer.hpp" />
     <ClInclude Include="WaveletTransform.hpp" />
   </ItemGroup>

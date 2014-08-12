@@ -32,14 +32,13 @@ void Main()
 		Waving::FFT(Recorder::GetWave(), Recorder::GetPos(), Waving::SampleLength::Default);
 
 		const float* p = Waving::FFTBuffer();
-		buffer.Append(p);
 
 		for (int i = 0; i < Window::Height(); ++i)
 		{
 			image[i][count] = HSV(-log(p[i]) * 10);
 		}
 
-		Texture(image).draw();
+		//Texture(image).draw();
 
 		Line(count, 0, count, Window::Height()).draw();
 		if (count >= 1024)
