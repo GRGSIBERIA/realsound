@@ -1,0 +1,18 @@
+------------------------------------------------------------------------------
+	Example ディレクトリのサウンドおよびイメージの著作者
+------------------------------------------------------------------------------
+
+Prokofiev.mid / S. S. Prokofiev「ロメオとジュリエット」組曲第１番 Op.64-bis - タイボルトの死
+	幻想交響曲 -Fantastic Symphony- | http://www.geocities.jp/kamotomusic/index.html
+
+風の丘.mp3
+	SAM FREE Music | http://sam-free.com/
+
+YomogiFont.ttf / よもぎフォント
+	ASTERISM | http://www.asterism-m.com/
+
+Earth.jpg
+	NASA | http://visibleearth.nasa.gov/
+
+Sound.mp3
+	「DSP Anime」で作成したフリー効果音です
