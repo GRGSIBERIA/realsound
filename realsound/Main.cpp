@@ -10,6 +10,7 @@ void Main()
 
 	Recorder::SetBufferLengthBySec(s3d::RecorerSamplingRate::S44100, 60 * 5);
 
+
 	sound::SignalBuffer buffer = sound::SignalBuffer(1024, 44100 >> 1);
 
 	Image image = Image(1024, 1024, Color(0, 0, 0));
@@ -44,7 +45,5 @@ void Main()
 		if (count >= 1024)
 			count = 0;
 		count++;
-
-		
 	}
 }

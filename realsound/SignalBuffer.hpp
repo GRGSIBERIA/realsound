@@ -16,7 +16,7 @@ namespace sound
 
 		unsigned bufferSize;
 		unsigned position;
-		unsigned spectrumLength;
+		unsigned sampleSize;
 		bool isFull;
 
 	public:
@@ -81,8 +81,8 @@ namespace sound
 		}
 
 	public:
-		SignalBuffer(unsigned bufferSize, unsigned spectrumLength)
-			: position(0), isFull(false), spectrumLength(spectrumLength), bufferSize(bufferSize)
+		SignalBuffer(unsigned bufferSize, unsigned sampleSize)
+			: position(0), isFull(false), sampleSize(sampleSize), bufferSize(bufferSize)
 		{
 			signals = SignalArray(bufferSize);
 			microSecs = TimeArray(bufferSize);
@@ -93,7 +93,7 @@ namespace sound
 		*/
 		void Append(const float signal[], const unsigned microSec)
 		{
-			signals[position] = Signal(signal, spectrumLength);
+			signals[position] = Signal(signal, sampleSize);
 			microSecs[position] = microSec;
 			RoundPosition();
 		}
@@ -103,7 +103,7 @@ namespace sound
 		*/
 		void Append(const float signal[])
 		{
-			signals[position] = Signal(signal, spectrumLength);
+			signals[position] = Signal(signal, sampleSize);
 			microSecs[position] = 0;
 			RoundPosition();
 		}
