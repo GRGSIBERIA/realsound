@@ -3,6 +3,9 @@
 
 namespace sound
 {
+	/**
+	* 時刻ごとの波形を蓄積するクラス
+	*/
 	class SignalBuffer
 	{
 	private:
@@ -67,6 +70,16 @@ namespace sound
 			return isFull;
 		}
 
+	private:
+		inline void RoundPosition() 
+		{
+			if (++position >= bufferSize)
+			{
+				position = 0;
+				isFull = true;
+			}
+		}
+
 	public:
 		SignalBuffer(unsigned bufferSize, unsigned spectrumLength)
 			: position(0), isFull(false), spectrumLength(spectrumLength), bufferSize(bufferSize)
@@ -76,18 +89,23 @@ namespace sound
 		}
 
 		/**
-		* バッファに周波数スペクトルを追加する
+		* バッファに信号を追加する
 		*/
-		void Append(float signal[], unsigned microSec)
+		void Append(const float signal[], const unsigned microSec)
 		{
 			signals[position] = Signal(signal, spectrumLength);
 			microSecs[position] = microSec;
+			RoundPosition();
+		}
 
-			if (++position >= bufferSize) 
-			{
-				position = 0;
-				isFull = true;
-			}
+		/**
+		* バッファに信号を追加する
+		*/
+		void Append(const float signal[])
+		{
+			signals[position] = Signal(signal, spectrumLength);
+			microSecs[position] = 0;
+			RoundPosition();
 		}
 
 		/**

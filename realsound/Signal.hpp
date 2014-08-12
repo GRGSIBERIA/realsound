@@ -2,6 +2,9 @@
 
 namespace sound
 {
+	/**
+	* 汎用的な波形クラス
+	*/
 	class Signal
 	{
 	private:
@@ -18,14 +21,14 @@ namespace sound
 		}
 
 		/**
-		*
+		* 波形を取得する
 		*/
 		inline float Buffer(const unsigned i) const {
 			return buffer[i];
 		}
 
 	public:
-		Signal(float spec[], unsigned length)
+		Signal(const float spec[], const unsigned length)
 		{
 			buffer = PowerArray(spec, spec + length);
 			this->length = length;

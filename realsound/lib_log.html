@@ -1,0 +1,188 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>lib Log</title>
+<style>
+body {
+	background-color: #18202A;
+	font-family: 'Segoe UI','メイリオ','Meiryo','ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','Osaka','ＭＳ Ｐゴシック','MS PGothic','Arial',sans-serif;
+}
+h2			{ color: #FFEEDD; text-align: center; }
+p			{ margin: 0px 12% 0px; padding: 5px 20px 5px; font-size: 14px; }
+p.error		{ background: #F03000; color: #000011; }
+p.fail		{ background: #E08000; color: #001122; }
+p.warning	{ background: #D0D020; color: #001133; }
+p.script	{ background: #20AA4A; color: #FFEEFF; }
+p.app		{ background: #202A2A; color: #FFEEDD; }
+p.info		{ background: #000A0A; color: #FFEEDD; }
+p.debug		{ background: #001F2F; color: #FFEEDD; }
+p.advice	{ background: #000A0A; color: #FFEEDD; }
+p.resource	{ background: #008A20; color: #FFEEDD; }
+p.credit0	{ color: #FFEEDD; text-align: center; font-size: 20px; }
+p.credit1	{ color: #FFEEDD; text-align: center; font-size: 12px; }
+</style>
+</head>
+<body>
+<h2>lib Log</h2>
+<p class="info">アプリケーションを開始します。</p>
+<p class="info">2014/8/12 18:32:34</p>
+<p class="info">エンジンを初期化します。</p>
+<p class="info">Siv3D Engine (Debug build) version May 2014 v2</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\Siv3DVersion&quot; をオープンしました。サイズ: 4B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\Siv3DVersion&quot; をクローズしました。</p>
+<p class="debug">INIReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\config.ini&quot; をロードしました。</p>
+<p class="debug">config をロードしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\splash.png&quot; をオープンしました。サイズ: 50.3KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\splash.png&quot; をクローズしました。</p>
+<p class="debug">スプラッシュウィンドウを作成しました。</p>
+<p class="info">ウィンドウクラスを登録しました。</p>
+<p class="debug">GDI+ を初期化しました。</p>
+<p class="debug">MP3 デコーダーを初期化しました。</p>
+<p class="debug">Media Foundation を初期化しました。</p>
+<p class="info">Wintab32.dll をロードしました。ペンタブを利用できます。</p>
+<p class="info">ペンタブの筆圧分解能: 1024 レベル</p>
+<p class="info">XInput コントローラーを使用できます。</p>
+<p class="info">ジョイスティックを使用できます。</p>
+<p class="info">マルチタッチには対応していません。</p>
+<p class="debug">入力デバイスを初期化しました。</p>
+<p class="info">サウンドデバイス: ヘッドホン (Cirrus Logic CS4206B (AB 07))</p>
+<p class="debug">Sound[0(null)] を作成しました。</p>
+<p class="debug">XAudio2 を初期化しました。</p>
+<p class="info">d3d11.dll をロードしました。</p>
+<p class="info">1 個のグラフィックスアダプターを検出しました。</p>
+<p class="info">[0] NVIDIA GeForce GTX 780M (VRAM 3GiB System 0B Shared 1024MiB)</p>
+<p class="info">デフォルトのグラフィックスアダプターのグラフィックスデバイスを作成します。</p>
+<p class="info">Direct3D 11 driver type: Hardware ( feature level 11_0 )</p>
+<p class="debug">利用可能な マルチサンプリング AA タイプ</p>
+<p class="debug">MSAA x1 (quality: 0)</p>
+<p class="debug">MSAA x2 (quality: 2)</p>
+<p class="debug">MSAA x4 (quality: 4)</p>
+<p class="debug">MSAA x8 (quality: 8)</p>
+<p class="debug">--</p>
+<p class="debug">使用する マルチサンプリング AA タイプ</p>
+<p class="debug">MSAA x4 (quality: 4)</p>
+<p class="info">使用するグラフィックスアダプター: NVIDIA GeForce GTX 780M (VRAM 3GiB System 0B Shared 1024MiB)</p>
+<p class="debug">640x480(59.951 Hz [59951/1000])</p>
+<p class="debug">640x480(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">720x480(59.951 Hz [59951/1000])</p>
+<p class="debug">720x480(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">720x576(59.951 Hz [59951/1000])</p>
+<p class="debug">720x576(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">800x600(59.951 Hz [59951/1000])</p>
+<p class="debug">800x600(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1024x768(59.951 Hz [59951/1000])</p>
+<p class="debug">1024x768(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1152x864(59.951 Hz [59951/1000])</p>
+<p class="debug">1152x864(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1280x720(59.951 Hz [59951/1000])</p>
+<p class="debug">1280x720(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1280x768(59.951 Hz [59951/1000])</p>
+<p class="debug">1280x768(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1280x800(59.951 Hz [59951/1000])</p>
+<p class="debug">1280x800(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1280x960(59.951 Hz [59951/1000])</p>
+<p class="debug">1280x960(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1280x1024(59.951 Hz [59951/1000])</p>
+<p class="debug">1280x1024(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1360x768(59.951 Hz [59951/1000])</p>
+<p class="debug">1360x768(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1366x768(59.951 Hz [59951/1000])</p>
+<p class="debug">1366x768(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1600x900(59.951 Hz [59951/1000])</p>
+<p class="debug">1600x900(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1600x1024(59.951 Hz [59951/1000])</p>
+<p class="debug">1600x1024(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1600x1200(59.951 Hz [59951/1000])</p>
+<p class="debug">1600x1200(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1680x1050(59.951 Hz [59951/1000])</p>
+<p class="debug">1680x1050(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1920x1080(59.951 Hz [59951/1000])</p>
+<p class="debug">1920x1080(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1920x1200(59.951 Hz [59951/1000])</p>
+<p class="debug">1920x1200(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">1920x1440(59.951 Hz [59951/1000])</p>
+<p class="debug">1920x1440(59.951 Hz [59951/1000])Centered</p>
+<p class="debug">2560x1440(59.951 Hz [59951/1000])</p>
+<p class="debug">TextReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\VS.SIV3D&quot; をオープンしました。サイズ: 183B, エンコーディング: ANSI</p>
+<p class="debug">TextReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\VS.SIV3D&quot; をクローズしました。</p>
+<p class="debug">TextReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\PS.SIV3D&quot; をオープンしました。サイズ: 381B, エンコーディング: ANSI</p>
+<p class="debug">TextReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\PS.SIV3D&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Shape.vs&quot; をオープンしました。サイズ: 768B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Shape.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Sprite.vs&quot; をオープンしました。サイズ: 844B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Sprite.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardFog.vs&quot; をオープンしました。サイズ: 1.12KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardFog.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ShapeStencil.vs&quot; をオープンしました。サイズ: 692B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ShapeStencil.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForward.vs&quot; をオープンしました。サイズ: 1.06KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForward.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshDeferred.vs&quot; をオープンしました。サイズ: 1.22KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshDeferred.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\SpriteStencil.vs&quot; をオープンしました。サイズ: 772B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\SpriteStencil.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshDeferred.vs&quot; をオープンしました。サイズ: 1.19KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshDeferred.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForward.vs&quot; をオープンしました。サイズ: 1008B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForward.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardFog.vs&quot; をオープンしました。サイズ: 1.19KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardFog.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulation.vs&quot; をオープンしました。サイズ: 1.04KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulation.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ScreenQuad.vs&quot; をオープンしました。サイズ: 580B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ScreenQuad.vs&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Shape.ps&quot; をオープンしました。サイズ: 464B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Shape.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Sprite.ps&quot; をオープンしました。サイズ: 812B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Sprite.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ShapeStencil.ps&quot; をオープンしました。サイズ: 316B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\ShapeStencil.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForward.ps&quot; をオープンしました。サイズ: 776B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForward.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardLinearFog.ps&quot; をオープンしました。サイズ: 1.24KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardLinearFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Font.ps&quot; をオープンしました。サイズ: 688B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Font.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulationSquareExponentialFog.ps&quot; をオープンしました。サイズ: 2.7KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulationSquareExponentialFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshDeferred.ps&quot; をオープンしました。サイズ: 1.25KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshDeferred.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\SpriteStencil.ps&quot; をオープンしました。サイズ: 736B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\SpriteStencil.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardSquareExponentialFog.ps&quot; をオープンしました。サイズ: 1.48KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForwardSquareExponentialFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForward.ps&quot; をオープンしました。サイズ: 564B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshForward.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardLinearFog.ps&quot; をオープンしました。サイズ: 1.43KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardLinearFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_None.ps&quot; をオープンしました。サイズ: 620B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_None.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardSquareExponentialFog.ps&quot; をオープンしました。サイズ: 1.66KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\TexturedMeshForwardSquareExponentialFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulationLinearFog.ps&quot; をオープンしました。サイズ: 2.46KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulationLinearFog.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshDeferred.ps&quot; をオープンしました。サイズ: 1.06KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\MeshDeferred.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulation.ps&quot; をオープンしました。サイズ: 2.44KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\LightAccumulation.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Finalize.ps&quot; をオープンしました。サイズ: 1.09KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\Finalize.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q20.ps&quot; をオープンしました。サイズ: 5.02KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q20.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q25.ps&quot; をオープンしました。サイズ: 8.34KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q25.ps&quot; をクローズしました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q39.ps&quot; をオープンしました。サイズ: 10.9KiB</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\shaders\d3d11\FXAA_Q39.ps&quot; をクローズしました。</p>
+<p class="debug">シェーダマネージャーを初期化しました。</p>
+<p class="debug">Texture[0(null)] を作成しました。</p>
+<p class="debug">テクスチャマネージャーを初期化しました。</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\assets\circle.png&quot; をオープンしました。サイズ: 866B</p>
+<p class="debug">BinaryReader &quot;C:\Users\EIICHI\OneDrive\Programs\Siv3D\realsound\realsound\engine\assets\circle.png&quot; をクローズしました。</p>
+<p class="debug">Texture[1] を作成しました。</p>
+<p class="debug">スプライトマネージャーを初期化しました。</p>
+<p class="debug">Mesh[0(null)] を作成しました。</p>
+<p class="debug">メッシュマネージャーを初期化しました。</p>
+<p class="debug">Renderer[0(null)] を作成しました。</p>
+<p class="debug">レンダラーマネージャーを初期化しました。</p>
+<p class="debug">Renderer[
