@@ -26,3 +26,7 @@
 *.suo
 *.vcxproj.filters
 *.rc
+
+realsound/Example
+realsound/Debug
+realsound/Release

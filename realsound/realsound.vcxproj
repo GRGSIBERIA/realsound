@@ -162,6 +162,12 @@
     <Font Include="engine\fonts\umeplus-p-gothic.ttf" />
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Scale.hpp" />
+    <ClInclude Include="Spectrum.hpp" />
+    <ClInclude Include="SpectrumBuffer.hpp" />
+    <ClInclude Include="WaveletTransform.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
