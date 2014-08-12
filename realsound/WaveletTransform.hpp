@@ -6,6 +6,8 @@ namespace sound
 	{
 	private:
 		typedef std::vector<Scale> ScaleArray;
+
+	private:
 		ScaleArray scales;
 		unsigned numberOfScales;
 

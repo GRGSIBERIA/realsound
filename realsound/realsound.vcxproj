@@ -14,7 +14,7 @@
     <ProjectGuid>{F48A8C9F-13C7-443D-A3F3-1F09A968BC78}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>realsound</RootNamespace>
-    <ProjectName>lib</ProjectName>
+    <ProjectName>realsound</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -59,6 +59,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <OpenMPSupport>true</OpenMPSupport>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -163,7 +164,9 @@
     <Font Include="Example\YomogiFont.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Cepstrum.hpp" />
     <ClInclude Include="Scale.hpp" />
+    <ClInclude Include="Signal.hpp" />
     <ClInclude Include="SignalBuffer.hpp" />
     <ClInclude Include="WaveletTransform.hpp" />
   </ItemGroup>
