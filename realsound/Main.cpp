@@ -2,6 +2,7 @@
 # include <Siv3D.hpp>
 # include "SignalBuffer.hpp"
 
+
 void Main()
 {
 	const Font font(30);
@@ -9,7 +10,6 @@ void Main()
 	Window::Resize(1024, 1024);
 
 	Recorder::SetBufferLengthBySec(s3d::RecorerSamplingRate::S44100, 60 * 5);
-
 
 	//sound::SignalBuffer buffer = sound::SignalBuffer(1024, 8194);
 
@@ -30,7 +30,7 @@ void Main()
 			Recorder::Restart();
 		}
 
-		Waving::FFT(Recorder::GetWave(), Recorder::GetPos(), Waving::SampleLength::SL16K);
+		Waving::FFT(Recorder::GetWave(), Recorder::GetPos(), Waving::SampleLength::SL4K);
 
 		const float* p = Waving::FFTBuffer();
 		//buffer.Put(p);

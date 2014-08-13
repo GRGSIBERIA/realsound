@@ -5,17 +5,17 @@ namespace sound
 	class Scale 
 	{
 	private:
-		typedef std::vector<float> WaveletArray;
-		WaveletArray weights;
-		WaveletArray differences;
+		typedef std::vector<float> FloatArray;
+		FloatArray weights;
+		FloatArray differences;
 		unsigned long size;
 		int scaleNumber;
 
 	private:
 		void InitScale(const unsigned long s) {
 			size = s;
-			weights = WaveletArray(size);
-			differences = WaveletArray(size);
+			weights = FloatArray(size);
+			differences = FloatArray(size);
 		}
 
 	public:
