@@ -1,4 +1,5 @@
-
+#ifndef CLINFORMATION_HPP
+#define CLINFORMATION_HPP
 
 #include <vector>
 
@@ -42,6 +43,6 @@ namespace cl
 			clReleaseContext(context);
 		}
 	};
-
-
 }
+
+#endif

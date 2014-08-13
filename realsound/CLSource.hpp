@@ -1,3 +1,6 @@
+#ifndef CLSOURCE_HPP
+#define CLSOURCE_HPP
+
 #include <string>
 #include <fstream>
 #include <iostream>
@@ -107,3 +110,5 @@ namespace cl
 		}
 	};
 }
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef CLEXECUTE_HPP
+#define CLEXECUTE_HPP
+
 #include "CLInformation.hpp"
 #include "CLSource.hpp"
 
@@ -17,19 +20,21 @@ namespace cl
 		void LoadSingleProgram(CLInformation& info, CLSource& source) 
 		{
 			size_t sourceSize = source.Size();
+			auto sourceCode = source.Code();
+
 			switch (source.Type())
 			{
 			case SourceType::Text:
 				clCreateProgramWithSource(
 					info.context, 1,
-					(const char**)source.Code(), (size_t*)&sourceSize,
+					(const char**)&sourceCode, (size_t*)&sourceSize,
 					&info.result);
 				break;
 
 			case SourceType::Binary:
 				clCreateProgramWithBinary(
 					info.context, info.numDevices, info.deviceIds,
-					(size_t*)sourceSize, (const unsigned char**)source.Code(),
+					(size_t*)sourceSize, (const unsigned char**)&sourceCode,
 					NULL, &info.result);
 				break;
 
@@ -62,10 +67,10 @@ namespace cl
 		}
 
 	public:
-		CLExecute(CLInformation& info, CLSource& source, std::string kernelName, int useDeviceId)
+		CLExecute(CLInformation& info, CLSource& source, std::string kernelName, cl_device_id useDeviceId)
 		{
 			// コマンドキューの設定
-			commandQueue = clCreateCommandQueue(info.context, info.deviceIds[useDeviceId], 0, &info.result);
+			commandQueue = clCreateCommandQueue(info.context, useDeviceId, 0, &info.result);
 
 			// プログラムの読み込み
 			LoadSingleProgram(info, source);
@@ -97,3 +102,5 @@ namespace cl
 	};
 
 }
+
+#endif
