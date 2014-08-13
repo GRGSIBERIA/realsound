@@ -69,28 +69,41 @@ namespace cl
 	{
 	private:
 		std::vector<CLSource> sources;
+		std::vector<size_t> sourceSizes;
 		std::vector<const char*> sourcePtrs;
+		SourceType type;
 
 	public:
 		/**
 		* ソースコードのポインタを返します
 		*/
-		inline const char** SourcePointers() const {
+		inline const char** Pointers() const {
 			// これ安全かどうかわからないなぁ……
 			return sourcePtrs.begin()._Ptr;
+		}
+
+		inline const size_t* Sizes() const {
+			return sourceSizes.begin()._Ptr;
+		}
+
+		inline const SourceType Type() const {
+			return type;
 		}
 
 		/**
 		* 利用したいソースコードを追加します
 		*/
-		inline void Append(const char* filename, SourceType type = SourceType::Text) {
+		inline void Append(const char* filename) {
 			sources.push_back(CLSource(filename, type));
-			sourcePtrs.push_back(sources[sources.size() - 1].Code());
+			auto s = sources[sources.size() - 1];
+			sourcePtrs.push_back(s.Code());
+			sourceSizes.push_back(s.Size());
 		}
 
 	public:
-		CLSourceArray() {
-
+		CLSourceArray(SourceType useType) : type(useType)
+		{
+			
 		}
 	};
 }
