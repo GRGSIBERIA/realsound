@@ -1,0 +1,7 @@
+namespace sound
+{
+	class DFT
+	{
+
+	};
+}

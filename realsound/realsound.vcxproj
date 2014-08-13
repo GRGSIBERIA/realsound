@@ -273,8 +273,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cepstrum.hpp" />
+    <ClInclude Include="CLExecute.hpp" />
+    <ClInclude Include="CLSource.hpp" />
+    <ClInclude Include="DFT.hpp" />
+    <ClInclude Include="CLInformation.hpp" />
     <ClInclude Include="Scale.hpp" />
-    <ClInclude Include="Signal.hpp" />
     <ClInclude Include="SignalBuffer.hpp" />
     <ClInclude Include="WaveletTransform.hpp" />
   </ItemGroup>
